@@ -1,0 +1,14 @@
+{% extends '_base.html' %}
+
+{% block content %}
+
+<a href="{% url 'drink_create' %}">+ New Drink</a>
+<ul>
+  {% for drink in all_drinks %}
+  <li>
+    <a href="{% url 'drink_detail' drink.pk %}">{{ drink.name }}</a>
+  </li>
+  {% endfor %}
+</ul>
+
+{% endblock content %}
